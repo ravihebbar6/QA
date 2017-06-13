@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="lead well">
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src=<%= @question.gravator %>/>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @question.email %></h4>
+        <%= @question.question %>
+      </div>
+    </li>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button>
+    </div>
+
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src=<%= @question.gravator %>/>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @question.email %></h4>
+        <%= @question.question %>
+      </div>
+    </li>
+
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src=<%= @question.gravator %>/>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @question.email %></h4>
+        <%= @question.question %>
+      </div>
+    </li>
+
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src=<%= @question.gravator %>/>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @question.email %></h4>
+        <%= @question.question %>
+      </div>
+    </li>
+  </div>
+</div>
+
+<%= render partial: 'new_answer' %>

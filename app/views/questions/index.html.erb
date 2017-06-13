@@ -1,0 +1,29 @@
+<div class="jumbotron" xmlns="http://www.w3.org/1999/html">
+  <div class="container">
+    <h1>Home</h1>
+  </div>
+</div>
+
+<div class="container">
+  <% @questions.each do |q| %>
+      <ul class="media-list">
+        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              <img src=<%= q.gravator%> />
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= q.email %></h4>
+            <%= q.question %>
+            <div>
+              <a class="btn btn-success" href='questions/1'>View Answers</a>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+  <% end %>
+</div>
+
+<%= render partial: 'new_question' %>
