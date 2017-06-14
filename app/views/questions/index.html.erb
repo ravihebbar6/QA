@@ -10,15 +10,15 @@
         <li class="media">
           <div class="media-left">
             <a href="#">
-              <img src=<%= q.gravator%> />
+              <img src=<%= gravator(q.email) %> />
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading"><%= q.email %></h4>
+            <h4 class="media-heading"><%= q.email %> answered:</h4>
+            <div><%= time_ago_in_words(q.created_at) %> ago</div>
             <%= q.question %>
             <div>
-              <a class="btn btn-success" href='questions/1'>View Answers</a>
-
+              <a class="btn btn-success" href=<%= question_path(q.id) %>>View Answers</a>
             </div>
           </div>
         </li>

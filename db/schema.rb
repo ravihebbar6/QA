@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612111111) do
+ActiveRecord::Schema.define(version: 20170614013045) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.string   "email",       null: false
+    t.text     "answer",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "questions", force: :cascade do |t|
-    t.string   "email"
-    t.text     "question"
+    t.string   "email",      null: false
+    t.text     "question",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

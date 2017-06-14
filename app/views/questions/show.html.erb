@@ -3,7 +3,7 @@
     <li class="media">
       <div class="media-left">
         <a href="#">
-          <img src=<%= @question.gravator %>/>
+          <img src=<%= gravator(@question.email) %>/>
         </a>
       </div>
       <div class="media-body">
@@ -17,44 +17,25 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div>
-      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit
+        new answer
+      </button>
     </div>
 
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img src=<%= @question.gravator %>/>
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><%= @question.email %></h4>
-        <%= @question.question %>
-      </div>
-    </li>
-
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img src=<%= @question.gravator %>/>
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><%= @question.email %></h4>
-        <%= @question.question %>
-      </div>
-    </li>
-
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img src=<%= @question.gravator %>/>
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><%= @question.email %></h4>
-        <%= @question.question %>
-      </div>
-    </li>
+    <% @answers.each do |a| %>
+        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              <img src=<%= gravator(a.email) %>/>
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= a.email %> answered:</h4>
+            <div><%= time_ago_in_words(a.created_at) %> ago</div>
+            <%= a.answer %>
+          </div>
+        </li>
+    <% end %>
   </div>
 </div>
 
