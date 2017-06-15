@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :questions
   root 'questions#index'
   
-  get 'home/about'
+  get 'home/about', as: :about
 end
