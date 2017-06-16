@@ -9,8 +9,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if Question.create!(email: params[:email], question: params[:question])
+    if Question.create!(question_params)
+      session[:current_user_email] = question_params[:email]
       redirect_to questions_path
     end
+  end
+
+  private
+
+  def question_params
+    params.require(:question).permit(:email, :question)
   end
 end
