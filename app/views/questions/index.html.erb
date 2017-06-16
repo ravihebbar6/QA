@@ -5,24 +5,24 @@
 </div>
 
 <div class="container">
-  <% @questions.each do |q| %>
-      <ul class="media-list">
-        <li class="media">
+  <div class="boxes">
+    <% @questions.each do |q| %>
+        <li class="media" data-target="<%= question_path(q.id) %>">
           <div class="media-left">
             <img src=<%= gravator(q.email) %>/>
           </div>
           <div class="media-body">
             <h4 class="media-heading"><%= q.email %> answered:</h4>
-            <div><%= time_ago_in_words(q.created_at) %> ago</div>
-            <%= q.question %>
-            <div>
-              <a class="btn btn-success btn-xs" href=<%= question_path(q.id) %>>View Answers</a>
+            <div class="time hidden-xs"><%= time_ago_in_words(q.created_at) %> ago</div>
+            <div><%= truncate q.question, lenght: 300 %></div>
+            <div class="hidden-xs">
+              <a class="btn btn-success btn-xs button" href=<%= question_path(q.id) %>>View Answers</a>
             </div>
           </div>
         </li>
-      </ul>
-  <% end %>
-  <% if @questions.empty? %>
-      <div class="alert alert-info">No questions asked</div>
-  <% end %>
+    <% end %>
+    <% if @questions.empty? %>
+        <div class="alert alert-info">No questions asked</div>
+    <% end %>
+  </div>
 </div>
