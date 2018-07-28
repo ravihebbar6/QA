@@ -1,4 +1,3 @@
-# My Rails app to deploy on heroku
+* My Rails app to deploy on heroku
 
-## URL:
-https://damp-dusk-47114.herokuapp.com/
+* URL: https://damp-dusk-47114.herokuapp.com/
